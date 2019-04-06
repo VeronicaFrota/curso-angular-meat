@@ -14,8 +14,10 @@ export class RestaurantsComponent implements OnInit {
 		private restaurantsService: RestaurantsService
 	) { }
 
+	// Para receber a lista de restaurants que será passada pelo observable em .ts
 	ngOnInit() {
-		this.restaurants = this.restaurantsService.restaurants()
+		this.restaurantsService.restaurants()
+			.subscribe(restaurans => this.restaurants = restaurans)
 	}
 
 }
