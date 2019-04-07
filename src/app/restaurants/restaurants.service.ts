@@ -19,7 +19,14 @@ export class RestaurantsService {
 	// Serviço Http que será consumido
 	restaurants(): Observable<Restaurant[]> {
 		return this.http.get(`${MEAT_API}/restaurants`)
-			.map(response => response.json()) // substitu erros por respostas Json
+			.map(response => response.json()) 	// substitu erros por respostas Json
+			.catch(ErrorHandler.handleError)
+	}
+
+	// Busca por um unico restaurante
+	restaurantById(id: string): Observable<Restaurant> {
+		return this.http.get(`${MEAT_API}/restaurants/${id}`)
+			.map(response => response.json())	// substitu erros por respostas Json
 			.catch(ErrorHandler.handleError)
 	}
 
