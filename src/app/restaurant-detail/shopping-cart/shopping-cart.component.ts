@@ -21,7 +21,22 @@ export class ShoppingCartComponent implements OnInit {
 
 	// Para expor o total dos valores
 	total(): number {
-		return this.shoppingCartService.total();
+		return this.shoppingCartService.total()
+	}
+
+	// Para limpar todos os itens do carrinho
+	clear() {
+		this.shoppingCartService.clear();
+	}
+
+	// Remove cada item do carrinho
+	removeItem(item: any) {
+		this.shoppingCartService.removeItem(item)
+	}
+
+	// Inclui item ao carrinho
+	addItem(item: any) {
+		this.shoppingCartService.addItem(item)
 	}
 
 }

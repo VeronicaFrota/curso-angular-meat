@@ -10,7 +10,7 @@ export class ShoppingCartService {
     }
 
     // Adiciona itens do menu
-    addItem(item:MenuItem) {
+    addItem(item: MenuItem) {
         // Procura se o id do menu item é igual ao id já existente no menu
         let foundItem = this.items.find((mItem) => mItem.menuItem.id === item.id)
 
@@ -24,13 +24,13 @@ export class ShoppingCartService {
 
     // Remove os itens do carrinho
     removeItem(item:CartItem) {
-        this.items.splice(this.items.indexOf(item), 1)  // Remove um a partir do item
+        this.items.splice(this.items.indexOf(item), 1)  // Remove um a partir do item, remove a partitr do index que quer remover
     }
 
     total(): number {
         return this.items
-            .map(item => item.value())
-            .reduce((prev, value) => prev + value, 0)
+            .map(item => item.value())                  // troca o cartItem para um valor do cartItem
+            .reduce((prev, value) => prev + value, 0)   // soma o valor anterior + o valor atual
     }
 
 }
