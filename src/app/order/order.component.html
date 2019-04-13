@@ -26,21 +26,24 @@
 				<div class="col-sm-6 col-xs-12">
 					<!--Input container do endereço-->
 					<mt-input-container errorMessage="Campo obrigatório e no minimo com 5 caracteres" label="Endereço">
-						<input class="form-control" name="address" ngModel required minlength="5" placeholder="Endereço" autocomplete="off">
+						<input class="form-control" name="address" ngModel required minlength="5" 
+							placeholder="Endereço" autocomplete="off">
 					</mt-input-container>
 				</div>
 
-				<div class="col-sm-2 col-xs-6">
+				<div class="col-sm-3 col-xs-6">
 					<!--Input container do número-->
-					<mt-input-container errorMessage="Número Obrigatório" label="Endereço">
-						<input class="form-control" name="number" ngModel required placeholder="Número" autocomplete="off">
+					<mt-input-container errorMessage="Obrigatório e somente números" label="Endereço">
+						<input class="form-control" name="number" ngModel required placeholder="Número" 
+							autocomplete="off" pattern="^[0-9]*$">
 					</mt-input-container>
 				</div>
 
-				<div class="col-sm-4 col-xs-6">
+				<div class="col-sm-3 col-xs-6">
 					<!--Input container do complemento-->
 					<mt-input-container>
-						<input class="form-control" name="optional" ngModel placeholder="complemento" autocomplete="off">
+						<input class="form-control" name="optional" ngModel placeholder="complemento" 
+							autocomplete="off">
 					</mt-input-container>
 				</div>
 				<!-- /.col -->
